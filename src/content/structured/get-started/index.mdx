@@ -3,48 +3,130 @@ path: "/get-started"
 
 navPriority: 0
 
-date: "2022-11-15"
+date: "2024-06-20"
 
 title: "Get started"
 
-subTitle: "Use the Design System and UI Kit to create accessible, usable and consistent apps and services for the United Kingdom Intelligence Community."
+subTitle: "Discover a high-quality, accessible UI Kit built for MI6, MI5 and GCHQ apps and digital products."
 
 contribute: "https://github.com/mi6/ic-design-system/tree/main/src/content/structured/get-started/index.mdx"
 ---
 
-import { IcCard } from "@ukic/react";
+import { IcCard, SlottedSVG, IcSectionContainer } from "@ukic/react";
+import "../get-started/index.css";
 
-## Design System and UI Kit
+## Introduction
 
-- [Accessibility guidance](/accessibility) to design, build and test apps and services that work for everyone.
-- [Style tokens](/styles) to create consistent experiences.
-- [Component guidance](/components) to implement accessible, usable and consistent user interfaces (UI).
-- [Patterns](/patterns) to help users with intuitive experiences for common user tasks.
+Inclusion and accessibility are core to our Design System. We’ve put a lot of effort into the atomic design components (such as typography and buttons) to instil confidence in the control of our ecosystem as we learn more about the vast use cases we encounter.
 
-### For developers
+The Design System has already proven that we can simultaneously speed up and improve the quality of what we build. This means the community and assets we adopt can better serve our fast-changing mission needs and we can be confident in them being accessible.
+
+We hope our experiences can support your efforts in improving accessibility and usability of complex government, enterprise and specialist technology.
+
+<IcSectionContainer aligned="center">
+  <ul className="card-container">
+    <IcCard
+      heading="Get started - Development"
+      message="Rapidly build apps that work robustly across tech stacks and platforms."
+      href="get-started/development"
+      clickable
+    >
+      <SlottedSVG
+        slot="image-top"
+        style={{
+          height: "100%",
+          width: "100%",
+          maxHeight: "20.375rem",
+          maxWidth: "20.375rem",
+        }}
+        viewBox="0 0 1600 1250"
+      >
+        <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+        <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+        <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+        <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+        <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+        <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+        <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+        <polygon fill="#b80066" points="641 695 886 900 367 900" />
+        <polygon fill="#960052" points="587 900 641 695 886 900" />
+        <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+        <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+        <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+        <polygon fill="#880088" points="943 900 1210 900 971 687" />
+      </SlottedSVG>
+    </IcCard>
+    <IcCard
+      heading="Get started - Design"
+      message="Our design documentation empowers you to create intuitive, consistent and accessible designs with ease."
+      href="get-started/design"
+      clickable
+    >
+      <SlottedSVG
+        slot="image-top"
+        style={{
+          height: "100%",
+          width: "100%",
+          maxHeight: "20.375rem",
+          maxWidth: "20.375rem",
+        }}
+        viewBox="0 0 1600 1250"
+      >
+        <rect fill="#ff7700" width="1600" height="1600" y="-350" />
+        <polygon fill="#cc0000" points="957 450 539 900 1396 900" />
+        <polygon fill="#aa0000" points="957 450 872.9 900 1396 900" />
+        <polygon fill="#c50022" points="-60 900 398 662 816 900" />
+        <polygon fill="#a3001b" points="337 900 398 662 816 900" />
+        <polygon fill="#be0044" points="1203 546 1552 900 876 900" />
+        <polygon fill="#9c0036" points="1203 546 1552 900 1162 900" />
+        <polygon fill="#b80066" points="641 695 886 900 367 900" />
+        <polygon fill="#960052" points="587 900 641 695 886 900" />
+        <polygon fill="#b10088" points="1710 900 1401 632 1096 900" />
+        <polygon fill="#8f006d" points="1710 900 1401 632 1365 900" />
+        <polygon fill="#aa00aa" points="1210 900 971 687 725 900" />
+        <polygon fill="#880088" points="943 900 1210 900 971 687" />
+      </SlottedSVG>
+    </IcCard>
+  </ul>
+</IcSectionContainer>
+
+## Explore the system
+
+Explore the system to uncover extra features including design tokens, guidelines and patterns aimed to assist developers in building consistent, accessible and intuitive apps and digital products.
+
+<IcSectionContainer>
+<ul className="card-container">
+<IcCard
+  heading="Design tokens"
+  message="Create experiences that empower time after time, across diverse touchpoints."
+  href="/styles"
+  clickable
+  >
+</IcCard>
 
 <IcCard
-  heading="Install the UI Kit components"
-  message="Install and use the UI Kit component library. Use React or web components to quickly build accessible interfaces."
-  href="get-started/install-components"
+  heading="Accessibility"
+  message="Design, build and test apps and services that work equitably for everyone."
+  href="accessibility"
   clickable
-  fullWidth
-/>
+></IcCard>
 
-### For designers
+<IcCard
+  heading="Components"
+  message="Rapidly build apps that work robustly across tech stacks and platforms."
+  href="components"
+  clickable
+/>
 
 <IcCard
   heading="Figma UI Kit"
-  message="Reusable and flexible Figma components used to design, prototype and hand-off designs for apps and digital products."
-  href="get-started/figma"
+  message="Lower learning curves and create super users with intuitive, expandable patterns."
+  href="/design/figma"
   clickable
-  fullWidth
 />
+</ul>
+</IcSectionContainer>
 
 ## Contribute
 
 We are expanding the UI Kit. You can check out the [roadmap](/community/roadmap) for what's coming. If you would like to help please [read more on how to contribute](/community).
-
-## Using v1.0 component library
-
-You can still use v1.0 (link available for internal users only). Support will be limited and the library deprecated in the future.
