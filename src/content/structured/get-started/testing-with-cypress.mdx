@@ -77,10 +77,34 @@ This allows traversing the shadow DOM using assertions without having to explici
 
 Below are examples of component tests on the `@ukic/react` components `IcTextfield` and `IcButton`. Component tests are normally located adjacent to the component they are testing and are rendered on a development server.
 
-```tsx
-// Textfield.tsx
-import { IcTextField, IcButton } from "@ukic/react";
-import React, { useState } from "react";
+{/* TODO: copy the way in which the code files display the examples */}
+{/* TODO: Cypress only available in react, change function of stackblitz or codepreview? */}
+{/* TODO: Stackblitz TestCodePreview will need to differentiate between cypress/jest and RTL */}
+{/* //? There is no short and long code. only long code. How to display this in the code preview? */}
+{/* //? Open stackblitz with a react component and cypress test file */}
+
+export const snippetsDefault ={
+    name: "Textfield.cy.tsx",
+    code: {
+      shortCode: `it("renders", () => {
+    cy.mount(<Textfield />).should("have.property", "component");
+  });
+  it("takes a value in the textfield and prints to console when the button is clicked", () => {
+    cy.mount(<Textfield />);
+    cy.stub(window.console, "log").as("consoleLog");
+
+    cy.get("ic-text-field").should("have.class", "hydrated");
+    cy.get("ic-button").should("have.class", "hydrated");
+
+    cy.get("#ic-text-field-input-1").type("Black");
+    cy.get("ic-button").click();
+    cy.get("@consoleLog").should(
+      "be.calledWith",
+      "This is the best coffee going:",
+      "Black"
+    );
+  });`,
+      longCode: `import React, { useState } from "react";
 
 function Textfield() {
   const [favouriteCoffee, setFavouriteCoffee] = useState<String>("");
@@ -110,39 +134,21 @@ function Textfield() {
   );
 }
 
-export default Textfield;
-```
+describe("IcTectField in a form", () => {
+  ${shortCode}
+});`
+    },
+  }
 
-```tsx
-// Textfield.cy.tsx
-import React from "react";
-import Textfield from "./Textfield.tsx";
-
-describe("<Textfield />", () => {
-  it("renders", () => {
-    cy.mount(<Textfield />).should("have.property", "component");
-  });
-  it("takes a value in the textfield and prints to console when the button is clicked", () => {
-    // Render the component
-    cy.mount(<Textfield />);
-    // Capture the log to check later
-    cy.stub(window.console, "log").as("consoleLog");
-
-    // Check the IcComponents have finished rendering
-    cy.get("ic-text-field").should("have.class", "hydrated");
-    cy.get("ic-button").should("have.class", "hydrated");
-
-    // Interact with the components and provide assertions
-    cy.get("#ic-text-field-input-1").type("Black");
-    cy.get("ic-button").click();
-    cy.get("@consoleLog").should(
-      "be.calledWith",
-      "This is the best coffee going:",
-      "Black"
-    );
-  });
-});
-```
+<ComponentTesting
+  style={{
+    gap: "0.5rem",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+  snippets={snippetsDefault}
+/>
 
 ## Example: End-to-end testing
 
